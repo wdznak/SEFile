@@ -1,5 +1,5 @@
 # SEFile
-*SEFile* is a simple app to write data into files asynchronously.
+*SEFile* is a simple library to write data into files asynchronously.
 
 ###### Code example
 ```C++
