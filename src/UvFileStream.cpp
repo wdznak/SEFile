@@ -59,7 +59,7 @@ namespace sefile {
 		fileInfo->userCallback = callback;
 		uv_fs_t* openRequest = new uv_fs_t;
 		openRequest->data = static_cast<void*>(fileInfo);
-		std::string path = getPath() + addTimeStamp(fileName);
+		std::string path = getPath() + addTimeStamp(fileName + "_INIT");
 
 		uv_fs_open(loop_.get(), openRequest, path.data(),
 			UV_FS_O_RDWR | UV_FS_O_CREAT, S_IRWXU, onOpen);
