@@ -36,7 +36,7 @@ namespace sefile {
 		FileInfoManager fileInfoManager_;
 		uv_idle_t idler_;
 		std::unique_ptr<uv_loop_t, void(*)(uv_loop_t*)> loop_;
-		std::atomic<size_t> maxFileSize_ = 1024 * 1024;
+		std::atomic<size_t> maxFileSize_ = 2 << 24; // 32MB
 		std::string pathToFile_;
 		std::shared_timed_mutex pathToFileMutex_;
 		tbb::concurrent_queue<queue_t> queue_;
